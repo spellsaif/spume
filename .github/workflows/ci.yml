@@ -37,7 +37,7 @@ jobs:
         with:
           key: ${{ matrix.features }}
       - name: cargo clippy
-        run: cargo clippy ${{ matrix.features }} --all-targets --locked
+        run: cargo clippy ${{ matrix.features }} --all-targets
 
   test:
     name: integration tests
