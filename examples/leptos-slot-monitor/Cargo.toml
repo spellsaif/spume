@@ -1,0 +1,14 @@
+[package]
+name = "leptos-slot-monitor"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+# Standalone workspace so cargo doesn't try to absorb us into the parent crate.
+[workspace]
+
+[dependencies]
+spume = { path = "../..", features = ["pubsub"] }
+leptos = { version = "0.8", features = ["csr"] }
+futures = "0.3"
+console_error_panic_hook = "0.1"
