@@ -203,8 +203,6 @@ async fn ws_logs_subscribe_unsubscribe() {
 async fn ws_is_connected_returns_true_when_open() {
     let client = WasmPubsubClient::connect(WS_URL).expect("WebSocket connect failed");
 
-    // The connection should be active immediately upon successful connect 
+    // The connection should be active immediately upon successful connect
     assert!(client.is_connected(), "client should report as connected");
-
-    
 }
