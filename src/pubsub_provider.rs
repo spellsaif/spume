@@ -113,6 +113,11 @@ impl PubsubProvider {
         &self.url
     }
 
+    /// Returns `true` if the underlying WebSocket connection is still open.
+    pub fn is_connected(&self) -> bool {
+        !self.inner.out_tx.is_closed()
+    }
+
     /// Issue a `<x>Subscribe` request and register a notification stream that
     /// auto-unsubscribes when dropped.
     pub async fn subscribe<T: DeserializeOwned + 'static>(
