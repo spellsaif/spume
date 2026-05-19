@@ -122,4 +122,9 @@ impl WasmPubsubClient {
     pub fn url(&self) -> &str {
         self.provider.url()
     }
+
+    /// Returns `true` if the underlying WebSocket connection is still open.
+    pub fn is_connected(&self) -> bool {
+        self.provider.is_connected()
+    }
 }

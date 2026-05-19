@@ -218,3 +218,12 @@ async fn ws_logs_subscribe_unsubscribe() {
         "server should ack logsUnsubscribe"
     );
 }
+
+#[cfg(feature = "pubsub")]
+#[wasm_bindgen_test]
+async fn ws_is_connected_returns_true_when_open() {
+    let client = WasmPubsubClient::connect(WS_URL).expect("WebSocket connect failed");
+
+    // The connection should be active immediately upon successful connect
+    assert!(client.is_connected(), "client should report as connected");
+}
