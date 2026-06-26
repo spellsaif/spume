@@ -127,4 +127,9 @@ impl WasmPubsubClient {
     pub fn is_connected(&self) -> bool {
         self.provider.is_connected()
     }
+
+    /// Returns the number of active strong references to the internal pubsub state.
+    pub fn strong_count(&self) -> usize {
+        self.provider.strong_count()
+    }
 }
